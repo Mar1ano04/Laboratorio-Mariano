@@ -1,19 +1,12 @@
-pipeline {
-    agent {
-        label 'worker-dev'
+pipeline{
+    agent{
+        label "worker-dev"
     }
     stages{
-        stage('compile')
-        {
+        stage("compile"){
             steps{
-                sh 'mvn -D skipTest clean install package'
-            }
-        stage('test')
-        {
-            steps{
-                sh 'mvn test'
+                sh 'mvn -DskipTests clean install package'
             }
         }
     }
-  }
 }
