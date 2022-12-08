@@ -1,5 +1,7 @@
 pipeline{
-    agent any
+    agent {
+        label: 'worker-dev
+    }
     stages{
         stage("compile"){
             steps{
